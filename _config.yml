@@ -6,6 +6,10 @@ title: "Liberty Nation News"
 url: "http://libertynation.news"
 baseurl: ""
 
+# site accounts
+google_analytics: 'UA-91420291-1'
+disqus_shortname:
+
 markdown: kramdown
 permalink: /writing/:title
 
