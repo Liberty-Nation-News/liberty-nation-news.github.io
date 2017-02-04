@@ -1,0 +1,2 @@
+---
+BUNDLE_WITHOUT: "json:1.8.3"

@@ -1,0 +1,42 @@
+---
+layout: article
+---
+
+
+<header class="masthead" style="background-image: url({{ site.url }}{{ page.bg }});">
+
+    {% include nav.html %}
+
+    <div class="dot"></div>
+    <h1 class="big-serif">{{ page.title }}</h1>
+    <!--<h2 class="small-sans">{{ page.subtitle }}</h2>-->
+    <small>{{ page.date | date_to_string }} - {% include readtime.html %}</small>
+
+
+</header>
+
+
+
+<article class="post">
+  {{ content }}
+</article>
+
+<span class="splitcontent">&#10540;</span>
+<aside class="related-posts">
+  <br>
+  <h2>You Might Also Like</h2>
+  <br>
+  <ul>
+    {% for post in site.related_posts limit:7 %}
+    {% if post.hidden != true %}
+          <li>
+          <span class="pontuation">❝</span><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+          <br>
+          <small>{{ post.date | date_to_string }}</small>
+          </li>
+          <br>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</aside>
+<br>

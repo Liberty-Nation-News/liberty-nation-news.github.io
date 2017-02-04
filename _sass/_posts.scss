@@ -1,0 +1,154 @@
+
+
+.page-section {
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  max-width: 28em;
+
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.8);
+
+}
+
+.page-section a {
+  color: $orange;
+  font-size: 22px;
+  font-weight: 300;
+
+
+}
+
+.post ul {
+
+  margin-bottom: 60px;
+}
+
+.post h4 {
+  font-weight: normal;
+  color: rgba(0,0,0,0.4);
+  font-size: 15px;
+  margin-bottom: 60px;
+  margin-top: -15px;
+  text-align: center;
+
+
+}
+
+
+.post {
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  max-width: 28em;
+  text-align: left;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.8);
+}
+
+
+
+// Blog post or page title
+.page-title {
+  font-family: $serif-font;
+  font-weight: normal;
+  font-size: $subtitle;
+  margin-bottom: 30px;
+
+
+}
+.post-title {
+
+  font-family: $serif-font;
+  font-weight: normal;
+  font-size: $subtitle;
+}
+.post-title a {
+  color: $blue;
+}
+.page-title,
+.post-title {
+  margin-top: 0;
+}
+
+.post-subtitle {
+  font-weight: normal;
+}
+
+
+// Meta data line below post title
+.post-date {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: $blue-light;
+}
+
+
+.post h2 {
+
+  font-family: $san-serif-font;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+
+// Related posts
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid $blue-lighest;
+}
+
+.related-posts {
+  line-height: 30px;
+}
+
+.related-posts h2 {
+  font-family: $serif-font;
+  font-weight: normal;
+  font-size: 40px;
+
+}
+
+.related-posts ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.related-posts small {
+  font-size: $subtext;
+  color: $blue-light;
+  font-weight: normal;
+}
+
+.related-posts a {
+  color: $blue;
+  font-size: $section-link;
+  text-decoration: none;
+  font-weight: normal;
+
+}
+
+.related-posts a:hover {
+  text-decoration: none;
+
+}
+.post img {
+
+  display: block;
+  width: 150%;
+  margin-left: -27%;
+
+}
+
+
+
+
