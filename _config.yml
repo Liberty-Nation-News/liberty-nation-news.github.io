@@ -13,8 +13,8 @@ permalink: /writing/:title
 navigation:
  - title: Home
    url: /
- - title: Writing
-   url: /writing/
+ - title: Politics
+   url: /politics/
  - title: About
    url: /about/
 
