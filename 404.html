@@ -1,10 +1,12 @@
 ---
-layout: fourzerofour
-title: "404: Page not found"
-permalink: 404.html
+layout: index
+title: Ooops!
 ---
-
-<div class="page" style="margin-top:20%;">
-  <h1 class="page-title"><span style="font-size:100px;">#404</span><br>Page Not Found</h1>
-  <p class="lead"><a href="{{ site.baseurl }}/">Head back home</a></p>
+<div class="error">
+    <p>Something seems to have gone wrong here. Sorry 'bout that</p>
+    <p>Maybe we can make up for it with some posts and then be friends again?</p>
 </div>
+
+{% for post in site.posts limit:4 %}
+    {% include article_index.html %}
+{% endfor %}

@@ -1,40 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>
-    {% if page.title == "Home" %}
-      {{ site.title }} &#8212; Designer
-    {% else %}
-      {{ site.title }} &#8212; {{ page.title }}
-    {% endif %}
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="{{ site.url }}/styles.css">
-
-  <!-- Icons -->
-  <link rel="shortcut icon" href="https://s.gravatar.com/avatar/851f86118501494793119407e207b01f?s=64" />
-
-  <!-- Type Kit -->
-  <script src="//use.typekit.net/pgq1xjb.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="{{ page.title }}"/>
-  <meta property="og:site_name" content="Bruno Marinho — Designer"/>
-  <meta property="og:url" content="http://www.brunomarinho.com"/>
-  <meta property="og:description" content=""/>
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/atom.xml">
-</head>
-
-
-
+<div class="row">
+    <a href="{{ site.baseurl | replace: '//', '/' }}/" class="logo noline">
+        {% include full.html %}
+        {% include logo.html %}
+        {% include icon.html %}
+    </a>
+</div>

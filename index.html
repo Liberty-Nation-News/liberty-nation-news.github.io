@@ -1,55 +1,56 @@
 ---
-layout: default
-title: Home
-shownav: true
+layout: index
+description: the good site of life
 ---
-
-
-<section class="selected-writing">
-  <h2>Selected Writing</h2>
-  <h3>“Write drunk, edit sober” &#8212; Ernest Hemingway</h3>
-  <br>
-{% for post in site.categories.blog limit:3 %}
-
-      <span class="pontuation">❝</span><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-      <br>
-      <small>{{ post.date | date_to_string }}</small>
-      <br>
-      <br>
-
+{% for post in paginator.posts %}
+    {% include article_index.html %}
 {% endfor %}
 
-  
+{% if paginator.total_pages > 1 %}
+    <div class="pagination">
+        <!-- link to first page -->
+        {% if paginator.total_pages > 3 %}
+            {% if paginator.page == 1 %}
+                <span class="disabled"><i class="fa fa-angle-double-left"></i></span>
+            {% else %}
+                <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-double-left"></i></a>
+            {% endif %}
+        {% endif %}
 
-</section>
-<a href="{{ site.url }}/writing">More</a>
-</span>
+        <!-- previous link -->
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-left"></i></a>
+        {% else %}
+            <span class="disabled"><i class="fa fa-angle-left"></i></span>
+        {% endif %}
 
-<br>
-<br>
-<br>
+        <!-- number links -->
+        {% capture start %}
+            {{ paginator.page | minus: 3 }}
+        {% endcapture %}
 
-<section class="selected-works">
-  <h2>Selected Stories</h2>
-  <h3>About startups, people and side projects I had the pleasure to work on.</h3>
-  <br>
+        {% for i in (1..paginator.total_pages) limit: 5 offset: start %}
+            {% if i == paginator.page %}
+                <span class="disabled">{{ i }}</span>
+            {% else %}
+                <a href="/page/{{ i }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
 
+        <!-- next link -->
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-right"></i></a>
+        {% else %}
+            <span class="disabled"><i class="fa fa-angle-right"></i></span>
+        {% endif %}
 
-  {% for work in site.data.works %}
-  <a style="border: transparent 0px;" href="{{ work.url }}" target="_blank"><img style="margin-bottom:10px;" src="{{ work.image }}"></a><br>
-
-  <span class="pontuation">❝</span><a href="{{ work.url }}" target="_blank">{{ work.title }}</a>
-  <br>
-  <small>{{ work.role }}, {{ work.date }}</small>
-  <br>
-  <br>
-  <br>
-  {% endfor %}
-
-
-</section>
-
-<!-- <a href="/works">More</a> -->
-
-
-
+        <!-- last page link -->
+        {% if paginator.total_pages > 3 %}
+            {% if paginator.page == paginator.total_pages %}
+                <span class="disabled"><i class="fa fa-angle-double-right"></i></span>
+            {% else %}
+                <a href="{{ site.baseurl | replace: '//', '/' }}/page/{{paginator.total_pages}}"><i class="fa fa-angle-double-right"></i></a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endif %}
